@@ -1,0 +1,7 @@
+{
+  "extends": "airbnb-base",
+  "rules": {
+    "max-len": [0, 120, 2, {ignoreComments: true}],
+    "no-console": 0
+  }
+}
