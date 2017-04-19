@@ -30,6 +30,17 @@ const csvHeaders = [
 
 output.write(`${csvHeaders.join(',')}\n`);
 
+function formatCost(rawCost) {
+  let negative = false;
+  if (rawCost.includes('-')) negative = true;
+
+  let formattedCost = parseInt(rawCost.replace(/,/g, ''), 10) * 1000;
+
+  if (negative) formattedCost *= -1;
+
+  return formattedCost;
+}
+
 function parseLine(line) {
   // check for patterns of new budget line, new project, or commitment
   if (/BUDGET LINE/.test(line)) {   // new budget line
@@ -42,7 +53,7 @@ function parseLine(line) {
     projectid = line.match(/^\d{3}(.{1,10})/)[1].trim();
     projectDescription = `"${line.match(/^\d{3}.{1,10}(.{1,62})/)[1].replace(/"/g, '').replace(/ +(?= )/g, '').trim()}"`;
 
-    console.log(`Setting new capital project: ${managingAgency}${projectid} - ${projectDescription}`);
+    console.log(`Setting new capital project: ${managingAgency}${projectid} | ${projectDescription}`);
   } else if (projectid && /\s[A-Z]{4}\s.{2,5}\s\d{3}\s/.test(line)) { // commitments
     const code = line.match(/\s[A-Z]{4}\s/)[0].trim();
 
@@ -56,11 +67,14 @@ function parseLine(line) {
     if (chunks.length > 3) throw new Error('rightSegment has more than 3 elements');
 
     // multiply cost integers by 1000
-    const cityCost = parseInt(chunks[0].replace(/,/g, ''), 10) * 1000;
+    // const cityCost = parseInt(chunks[0].replace(/,/g, ''), 10) * 1000;
+    // const nonCityCost = parseInt(chunks[1].replace(/,/g, ''), 10) * 1000;
+    const cityCost = formatCost(chunks[0]);
     const nonCityCost = parseInt(chunks[1].replace(/,/g, ''), 10) * 1000;
+
     const planCommDate = chunks[2];
 
-    console.log(`Logging commitment: ${code} - ${costDescription} - ${cityCost} ${nonCityCost} ${planCommDate}`);
+    console.log(`Logging commitment: ${code} | ${costDescription} | ${cityCost} ${nonCityCost} ${planCommDate}`);
 
     const lineData = [
       budgetLine,
