@@ -4,7 +4,7 @@ node.js scraping script for NYC OMB Capital Commitment Plans
 
 ## Get Data
 
-[January 2017 Capital Commitment Plan](https://raw.githubusercontent.com/chriswhong/nyc-capital-commitment-scrape/master/csv/2017-Jan/commitments.csv)
+[January 2017 Capital Commitment Plan](https://raw.githubusercontent.com/chriswhong/nyc-capital-commitment-scrape/master/csv/2017-Jan/commitments.csv) - 29,616 commitments - $100.3B
 
 ## How to Use
 
