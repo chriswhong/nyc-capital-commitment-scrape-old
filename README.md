@@ -7,7 +7,7 @@ I have not thoroughly QC'd the output csv in this repo, and cannot vouch for its
 
 ## Get Data
 
-[January 2017 Capital Commitment Plan](https://raw.githubusercontent.com/chriswhong/nyc-capital-commitment-scrape/master/csv/2017-Jan/commitments.csv) - 29,616 commitments - $100.3B
+[January 2017 Capital Commitment Plan](https://raw.githubusercontent.com/chriswhong/nyc-capital-commitment-scrape/master/csv/2017-Jan/commitments.csv) - 29,616 commitments
 
 ## How to Use
 
