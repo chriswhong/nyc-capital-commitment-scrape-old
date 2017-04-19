@@ -55,6 +55,7 @@ function parseLine(line) {
 
     if (chunks.length > 3) throw new Error('rightSegment has more than 3 elements');
 
+    // multiply cost integers by 1000
     const cityCost = parseInt(chunks[0].replace(/,/g, ''), 10) * 1000;
     const nonCityCost = parseInt(chunks[1].replace(/,/g, ''), 10) * 1000;
     const planCommDate = chunks[2];
@@ -69,7 +70,6 @@ function parseLine(line) {
       projectDescription,
       code,
       costDescription,
-
       cityCost,
       nonCityCost,
       planCommDate,
