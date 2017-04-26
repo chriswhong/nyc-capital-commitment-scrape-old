@@ -15,6 +15,11 @@ I have not thoroughly QC'd the output csv in this repo, and cannot vouch for its
 
 [January 2017 Capital Commitment Plan - Grouped by Project ID (csv)](https://raw.githubusercontent.com/chriswhong/nyc-capital-commitment-scrape/master/csv/2017-Jan/projects.csv) - 9,543 Capital Projects
 
+
+[April 2017 Capital Commitment Plan - Individual Commitments (csv)](https://raw.githubusercontent.com/chriswhong/nyc-capital-commitment-scrape/master/csv/2017-Apr/commitments.csv) - 33,259 commitments, $105.8B
+
+[April 2017 Capital Commitment Plan - Grouped by Project ID (csv)](https://raw.githubusercontent.com/chriswhong/nyc-capital-commitment-scrape/master/csv/2017-Apr/projects.csv) - 9,983 Capital Projects
+
 [Agency Code Lookup (csv)](https://raw.githubusercontent.com/chriswhong/nyc-capital-commitment-scrape/master/csv/agencies.csv)
 ## How to Use
 
